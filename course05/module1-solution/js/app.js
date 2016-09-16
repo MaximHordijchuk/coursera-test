@@ -11,11 +11,11 @@
       var dishesCount = checkDishesCount($scope.lunch);
       if (dishesCount == 0) {
         $scope.message = "Please enter data first";
-        $scope.messageColor = "red";
-        $scope.border = "1px solid red";
+        $scope.messageStyle = { color: "red" };
+        $scope.inputStyle = { border: "1px solid red" };
       } else {
-        $scope.messageColor = "green";
-        $scope.border = "1px solid green";
+        $scope.messageStyle = { color: "green" };
+        $scope.inputStyle = { border: "1px solid green" };
         if (dishesCount <= 3) {
             $scope.message = "Enjoy!";
         } else {
