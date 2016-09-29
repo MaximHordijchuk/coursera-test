@@ -26,11 +26,9 @@
     var ddo = {
       restrict: "E",
       templateUrl: "foundItemsTemplate.html",
-      transclude: true,
       scope: {
         foundItems: "<",
         onRemove: "&",
-        message: "<?"        
       }
     };
 
@@ -41,12 +39,8 @@
     var vm = this;
 
     vm.searchTerm = "";
-    vm.found = MenuSearchService.getMatchedMenuItems("");
-    vm.userClicked = false;
 
     vm.getMatchedMenuItems = function () {
-      vm.userClicked = true;
-
       if (vm.searchTerm === "") {
         vm.found = [];
       } else {

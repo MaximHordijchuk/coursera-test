@@ -4,4 +4,4 @@
     <button class="btn btn-default btn-xs" ng-click="onRemove({index: $index});">Don't want this one!</button>
   </li>
 </ul>
-<div ng-transclude></div>
+<div class="text-warning" ng-if="foundItems.length == 0">Nothing found</div>
