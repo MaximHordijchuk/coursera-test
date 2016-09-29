@@ -28,8 +28,6 @@
       bought.push(buy[index]);
       buy.splice(index, 1);
     }
-
-    return this;
   });
 
   app.controller("ToBuyController", ["ShoppingListCheckOffService", function (ShoppingListCheckOffService) {
