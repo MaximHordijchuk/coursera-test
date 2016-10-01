@@ -1,7 +1,26 @@
-<ul>
-  <li ng-repeat="item in foundItems">
-    <strong>{{item.name}}</strong>, {{item.short_name}}, {{item.description}}
-    <button class="btn btn-default btn-xs" ng-click="onRemove({index: $index});">Don't want this one!</button>
-  </li>
-</ul>
-<div class="text-warning" ng-if="foundItems.length == 0">Nothing found</div>
+<table class="table" ng-if="foundItems.length > 0">
+  <thead>
+    <tr>
+      <th>Short name</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in foundItems">
+      <td ng-bind="item.short_name"></td>
+      <td ng-bind="item.name"></td>
+      <td ng-bind="item.description"></td>
+      <td>
+        <button class="btn btn-danger btn-xs" ng-click="onRemove({index: $index});">
+          Don't want this one!
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="alert alert-warning" role="alert" ng-if="foundItems.length == 0">
+  <span class="glyphicon glyphicon-exclamation-sign"></span>
+  Nothing found
+</div>
